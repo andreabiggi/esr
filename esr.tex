@@ -1,0 +1,218 @@
+\documentclass[a4paper, 12pt, appendixprefix=true]{scrreprt}%      autres choix : book, report
+\usepackage[utf8]{inputenc}%           gestion des accents (source)
+\usepackage[T1]{fontenc}%              gestion des accents (PDF)
+\usepackage[francais]{babel}%          gestion du français
+\usepackage{textcomp}%                 caractères additionnels
+\usepackage{mathtools,amssymb,amsthm}% packages de l'AMS + mathtools
+\usepackage{lmodern}%                  police de caractère
+%\usepackage{geometry}%                 gestion des marges
+\usepackage{graphicx}%                 gestion des images
+\usepackage{xcolor}%                   gestion des couleurs
+\usepackage{array}%                    gestion améliorée des tableaux
+\usepackage{calc}%                     syntaxe naurelle pour les calculs
+%\usepackage{titlesec}%                 pour les sections
+\usepackage{titletoc}%                 pour la table des matières
+\usepackage{fancyhdr}%                 pour les en-têtes
+\usepackage{titling}%                  pour le titre
+\usepackage{enumitem}%                 pour les listes numérotées
+\usepackage{hyperref}%                 gestion des hyperliens
+\hypersetup{pdfstartview=XYZ}%         zoom par défaut
+
+\author{Emilie Descollonge \and Andrea Biggi}
+\title{Écrit scientifique réflexif \\ \textbf{<<L'algorithmique par le jeu : TP's pour les classes de seconde>>}}
+
+\date{}
+
+\renewcommand{\baselinestretch}{1.5}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+\begin{document}
+
+\begin{minipage}[c]{0.3\linewidth}
+		\includegraphics[width=\linewidth]{figs/logo-espe}
+	\end{minipage}
+	\hfill
+\begin{minipage}[c]{0.3\linewidth}
+		\includegraphics[width=\linewidth]{figs/logo_UGA}
+	\end{minipage}
+\begin{minipage}[c]{0.3\linewidth}
+		\includegraphics[width=\linewidth]{figs/logo-usm}
+	\end{minipage}
+
+\bigskip
+
+\begin{center}
+	{\large \textbf{Année universitaire 2017-2018}}
+\end{center}
+
+\bigskip
+
+
+\begin{center}
+	\textbf{Diplôme Universitaire Métiers de l'Enseignement, de l'Éducation et de la Formation Second degré}
+\end{center}
+
+\vspace{3cm}
+
+\begin{center}
+	{\LARGE \textbf{<<L'algorithmique par le jeu :\\
+			 Travaux Pratiques pour les classes de seconde>>}}
+\end{center}
+
+\vspace{7cm}
+
+\textbf{Présenté par :} Émilie Descollonge et Andrea Biggi
+
+\textbf{Écrit scientifique réflexif encadré par :} Anne Mizony
+
+%Pas de numéro de page sur la page de garde
+\thispagestyle{empty}
+\setcounter{page}{0}
+
+\tableofcontents
+
+\part{Partie théorique}
+\chapter{Introduction}
+Une page 
+
+\chapter{État de l'art}
+\textit{10 pages.\\
+Revue de littérature scientifique sur le sujet traité.\\
+L'état de l'art propose une synthèse des lectures pertinentes pour votre problématique. L'état de l'art est structuré en entonnoir, du plus général au plus spécifique.}\\
+
+
+L'algorithmique occupe une place croissante dans l'enseignement des mathématiques. 
+Dans un premier temps, nous ferons un bref historique de l'algorithmique, afin de comprendre ses principes et ses enjeux.
+Puis nous reviendrons sur l'enseignement de l'algorithmique, depuis son introduction jusqu'à aujourd'hui. Nous détaillerons particulièrement les nouveautés majeures de cette année scolaire.
+Puis nous étudierons la nécessité pour les enseignants de se procurer des ressources de qualité.
+\begin{enumerate}
+	\item Historique de l'algorithmique
+	\item Historique de l'enseignement de l'algorithmique
+	\item Nouveautés de l'année scolaire 2017-2018
+	\item L'enseignant et ses ressources
+\end{enumerate}
+
+\section{Historique de l'algorithmique}
+Plusieurs définitions de l'algorithmique coexistent, dont les sens sont très proches :
+
+D'après le Larousse, il s'agit seulement d'un adjectif.
+D'après le Robert (pas trouvé en ligne)
+Selon l'Encyclopaedia Universalis, l'objet de l'algorithmique est la conception, l'évaluation, et l'optimisation des méthodes de calcul en mathématiques et en informatique.
+D'après l'Encyclopédie Wikipedia, il s'agit de l'étude et la production de règles et techniques qui sont impliquées dans la définition et la conception d'algorithmes.
+
+Il nous faut alors expliciter la définition d'un algorithme.
+d'après le Larousse, il s'agit d'un ensemble de règles opératoires dont l'application permet de résoudre un problème énoncé au moyen d'un nombre fini d'opérations. Un algorithme peut être traduit, grâce à un langage de programmation, en un programme exécutable par un ordinateur.
+Nous notons ici une différence primordiale entre algorithme et programme, qui sont pourtant souvent considérés comme synonymes.
+L'algorithme est complètement indépendant de quelque langage de programmation que ce soit. C'est son exécution qui est liée à un programme. Nous reviendrons ultérieurement sur cette nuance.
+
+Ajouter les définitions de Donald Knuth / George Boolos / Gérard Berry (déf grand public).
+
+Les premiers algorithmes ont existé bien avant d'être nommés ainsi.
+En effet, le terme algorithme provient de Muhammad Ibn Al-Khwarizmi (800-847) mathématicien et scientifique Perse, suite à son ouvrage donnant des solutions aux équations linéaires et quadratiques. Néanmoins, les premiers algorithmes remontent vraisemblablement au troisième millénaire avant J.-C., par les Babyloniens. En effet, on sait par les tablettes d'argile retrouvées que les babyloniens savaient calculer une valeur très approchée de racine carrée de deux, et la méthode pour y parvenir est une suite de calculs qui s'apparentent à un algorithme. Des méthodes existaient également pour diviser par sept ou pour résoudre un problème de volume de dimension de citerne.
+Dans Les Eléments d'Euclide, livre 7, propositions 1 et 2, Euclide propose un algorithme de détermination du plus grand commun diviseur, communément appelé "algorithme d'Euclide". Il est à noter que cet algorithme n'est probablement pas d'Euclide mais date d'environ 200 ans avant, ce qui donne tout de même une certaine précision quant à la période concernée. Malgré les limites de cet algorithme, comme l'absence de preuve par récurrence, on y trouve des étapes classiques d'un algorithme : initialisation, itération, preuve.
+
+Historique à poursuivre : avec période 1940 (fonctions calculables) + période 1980 (curry howard)
+: ressources internet uniquement ou livre "histoires d'algorithmes, du caillou à la puce" à la bibli de l'irem grenoble (aller sur le campus ?)
+
+\section{Historique de l'enseignement de l'algorithmique}
+Poursuivons cette avancée dans l'histoire et étudions désormais l'introduction de l'algorithmique dans l'enseignement.
+On voit apparaître le terme d'algorithme dans le programme applicable à compter de l'année scolaire 2000-2001, BO du 12 août 1999, dans lequel il n'y a néanmoins aucun attendu : 
+Dans la partie Statistiques, en commentaires, il est indiqué "le calcul de la médiane nécessite de trier les données, ce qui pose des problèmes de nature algorithmique".
+Dans la partie "Calcul et fonctions", il est rappelé qu'en classe de troisième, les élèves ont vu des "exemples d'algorithmes simples".
+(reste à faire : trouver programme avant 2000)
+C'est en 2009 que l'enseignement de l'algorithmique a été introduit dans les programmes de Seconde.
+Ce qui est proposé est une "formalisation en langage naturel propre à donner lieu à traduction sur une calculatrice ou à l'aide d'un logiciel". Il est également précisé "Il s'agit de familiariser les élèves avec les grands principes d'organisation d'un algorithme". Par ailleurs, il est bien spécifié "aucun langage, aucun logiciel n'est imposé".
+Le programme de mathématiques fait ensuite l'objet d'un aménagement en 2017 (à poursuivre).
+
+\section{Nouveautés de l'année scolaire 2017-2018}
+
+\section{L'enseignant et ses ressources}
+
+\chapter{Problématique}
+Cette section est très courte (une demi-page à une page).
+
+\chapter{Mise en \oe uvre}
+
+\part{Travaux Pratiques}
+
+L'ensemble des TP's doit avoir une durée d'environ 18-20 heures (nombre d'heures d'informatique préconisées par l'inspection académique \cite{eduscol}) et couvrir tout le programme d'informatique de la classe de seconde.
+
+\chapter{Mise en place en classe de seconde}
+Des Travaux pratiques de seconde.
+
+\section{TP1 -- Informatique débranchée}
+Un TP débranché
+
+
+\section{TP2 -- Affectation et instructions conditionnelles}
+Instruction conditionnelles
+
+\section{TP3 -- Boucles}
+Les boucles
+
+\section{TP4 -- Fonctions}
+Un projet qui résume tout en utilisant les fonctions. 
+
+
+\part{Analyse à posteriori}
+
+\chapter{Retour d'expérience sur les TP's}
+\section{TP1}
+
+\section{TP2}
+
+\section{TP3}
+
+\section{TP4}
+
+\chapter{Conclusion}
+Conclusions
+
+\begin{thebibliography}{9}
+	% maille
+	\bibitem{maille}
+	\textsc{Maille}, Vincent (2015).
+	\textit{Apprendre la programmation par le jeu}. Paris: Éditions Ellipses.
+	
+	% eduscol
+	\bibitem{eduscol}
+	\textsc{Ministère de l'Éducation Nationale} (2017).
+	\textit{Algorithme et programmation.} Repéré à \url{http://www.ac-grenoble.fr/disciplines/maths/pages/PM/Ressources/557/Algorithmique_et_programmation_787733.pdf}
+\end{thebibliography}
+
+\appendix
+\chapter{Codes Python}
+
+\section{TP 1}
+Code du TP 
+
+\section{TP 2}
+Code du TP 
+
+\section{TP 3}
+Code du TP 
+
+\section{TP 4}
+Code du TP 
+
+\begin{abstract}
+	\begin{description}
+	\item[Résumé :] Dans ce travail on analysera l'apprentissage de l'algorithmique par le jeu. 
+	Le jeu nous semble représenter un bon angle d'approche de l'enseignement de l'algorithmique au collège et au lycée. 
+	La création d'un ou plusieurs simples jeux permet de mobiliser pratiquement toutes les compétences/connaissances requises dans la cadre des programmes officiels. Sans compter que le concept de jeu, dans la conception de l'élève, est souvent lié à l'informatique. 
+	A travers le jeu on pourrait traiter des thématiques très différentes : probabilités, instructions conditionnelles, boucles et dans le cadre d'un projet de ISN on pourrait arriver jusqu'à l'usage de fenêtres graphiques.\\
+	
+	\item[Mots clé :] Algorithme, jeu, Python, débranché, programmation, seconde, ISN, informatique.
+	\end{description}
+	
+	\begin{description}
+		\item[Abstract :] Dans ce travail on analysera l'apprentissage de l'algorithmique par le jeu. 
+		Le jeu nous semble représenter un bon angle d'approche de l'enseignement de l'algorithmique au collège et au lycée. 
+		La création d'un ou plusieurs simples jeux permet de mobiliser pratiquement toutes les compétences/connaissances requises dans la cadre des programmes officiels. Sans compter que le concept de jeu, dans la conception de l'élève, est souvent lié à l'informatique. 
+		A travers le jeu on pourrait traiter des thématiques très différentes : probabilités, instructions conditionnelles, boucles et dans le cadre d'un projet de ISN on pourrait arriver jusqu'à l'usage de fenêtres graphiques.\\
+		
+		\item[Keywords :] Algorithme, jeu, Python, débranché, programmation, seconde, ISN, informatique.
+	\end{description}
+\end{abstract}
+
+\end{document}
